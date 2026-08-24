@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven'
+    }
+
+    stages {
+        stage('one') {
+            steps {
+                git 'https://github.com/RAHAMSHAIK007/jenkins-java-project-1.git'
+                sh 'mvn compile'
+                sh 'mvn test'
+                sh 'mvn clean package'
+                echo 'My code is deployed'
+            }
+        }
+    }
+}
