@@ -1,0 +1,18 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Memory') {
+            steps {
+                sh 'free -h'
+            }
+        }
+
+        stage('CPU') {
+            steps {
+                sh 'lscpu'
+            }
+        }
+    }
+}
